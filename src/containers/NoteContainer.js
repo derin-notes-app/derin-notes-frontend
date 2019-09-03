@@ -37,7 +37,7 @@ const mapDispatchToProps = dispatch => ({
     dispatch(fetchNote());
   },
   createNote(note) {
-    dispatchEvent(createNote(note));
+    dispatch(createNote(note));
   }
 });
 
