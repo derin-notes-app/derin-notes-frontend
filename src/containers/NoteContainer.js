@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import Notes from '../components/notes/Note';
+import Notes from '../components/notes/Notes';
 import { connect } from 'react-redux';
 import { NoteForm } from '../components/forms/NoteForm';
-import { fetchNote, createNote } from '../actions/noteAction';
+import { fetchNotes, createNote } from '../actions/noteAction';
 import { getNotesList } from '../selectors/noteSelector';
 
 class NotesContainer extends Component { 
@@ -34,7 +34,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   fetch() {
-    dispatch(fetchNote());
+    dispatch(fetchNotes());
   },
   createNote(note) {
     dispatch(createNote(note));
