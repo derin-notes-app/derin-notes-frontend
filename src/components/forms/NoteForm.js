@@ -7,12 +7,11 @@ export class NoteForm extends Component {
   };
 
   state = {
-    _id: '',
     title: '',
     body: ''
   };
 
-  handlechange = ({ target }) => {
+  handleChange = ({ target }) => {
     this.setState({ [target.name]: target.value });
   };
 
@@ -24,8 +23,9 @@ export class NoteForm extends Component {
   render() {
     return (
       <form onSubmit={this.handleSubmit}>
-        <input title="title" placeholder="Title" required onChange={this.handleChange}></input>
-        <input body="body" placeholder="Body" required onChange={this.handleChange}></input>
+        <input name="title" placeholder="Title" required onChange={this.handleChange}></input>
+        <input name="body" placeholder="Body" required onChange={this.handleChange}></input>
+        <button>Add Note</button>
       </form>
     );
   }
