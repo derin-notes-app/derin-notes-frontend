@@ -2,9 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Note from './Note';
 
-export default function Notes({ notes }) {
+export default function Notes({ notes, removeNote }) {
   const notesArray = notes.map((note, i) => {
-    return <Note key={i} note={note} />;
+    return <Note key={i} removeNote={removeNote} note={note} />;
   });
 
   return (
@@ -16,5 +16,6 @@ export default function Notes({ notes }) {
 
 Notes.propTypes = {
   notes: PropTypes.array.isRequired,
+  removeNote: PropTypes.func.isRequired
 };
 
